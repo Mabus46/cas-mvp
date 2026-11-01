@@ -91,7 +91,7 @@ function buildSeedState() {
       rpe: rpePlan[idx],
       sleepH: sleepPlan[idx],
       reactionMs: reactPlan[idx],
-      source: idx % 4 === 0 ? ' wearable' : 'manual',
+      source: idx % 4 === 0 ? 'wearable' : 'manual',
       done: true
     });
   }

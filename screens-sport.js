@@ -67,7 +67,7 @@
     var m = AI.metrics(state, a.id);
 
     var table = U.table(['Дата', 'Тип', 'Объём, мин', 'RPE', 'Сон, ч', 'Реакция, мс', 'Источник'], rows.slice(0, 14).map(function (t) {
-      return [C.dateRu(t.date), esc(t.type), String(t.loadMin), String(t.rpe), String(t.sleepH).replace('.', ','), String(t.reactionMs), esc(t.source === ' wearable' || t.source === 'wearable' ? 'устройство' : 'ручной ввод')];
+      return [C.dateRu(t.date), esc(t.type), String(t.loadMin), String(t.rpe), String(t.sleepH).replace('.', ','), String(t.reactionMs), esc(t.source === "wearable" ? "устройство" : "ручной ввод")];
     }), { numCols: [2, 3, 4, 5] });
 
     return viewing + '<div class="page-head"><h1>Тренировочный модуль</h1>' +

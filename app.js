@@ -178,7 +178,11 @@
 
     var back = document.getElementById('back-to-fund');
     if (back) {
-      var isSubfolder = /^\/[^/]+\/?$/.test(location.pathname) && location.protocol !== 'file:';
+      // ссылка «На сайт фонда» нужна только там, где стенд лежит в подпапке чужого сайта
+      // (например, фсрсп.рф/cas/), и не нужна на отдельном хостинге вроде <логин>.github.io
+      var isSubfolder = /^\/[^/]+\/?$/.test(location.pathname) &&
+        location.protocol !== 'file:' &&
+        !/\.github\.io$/i.test(location.hostname);
       back.hidden = !isSubfolder;
     }
 
